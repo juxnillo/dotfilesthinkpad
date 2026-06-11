@@ -1,0 +1,13 @@
+//Main Monitor
+output "eDP-1" {
+    mode "1920x1080@60"
+    scale 1.25
+    transform "normal"
+    focus-at-startup
+}
+
+output "HDMI-A-2" {
+    mode "1920x1080@60"
+    scale 1
+    transform "normal"
+}
