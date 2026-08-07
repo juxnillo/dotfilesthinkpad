@@ -5,6 +5,7 @@ return {
     bigfile = { enabled = true },
     dashboard = {
       enabled = true,
+      width = 60,
       preset = {
         header = [[
     ██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗
@@ -16,8 +17,9 @@ return {
       ]],
       },
       sections = {
+        { paddin = 5 },
         { section = 'header' },
-        { section = "keys", indent = 1,gap = 1, padding = 1 },
+        { section = "keys", indent = 0 ,gap = 1, padding = 1 },
         { section = 'recent_files', icon = ' ', title = 'Recent Files', cwd = true, indent = 3, padding = 2 },
         -- { icon = " ", title = "Projects", section = "projects", indent = 3, padding = 2 },
         { section = "startup" },

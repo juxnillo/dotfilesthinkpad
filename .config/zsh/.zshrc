@@ -7,6 +7,9 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
+# Source
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 # Plugins Zap
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 plug "zsh-users/zsh-autosuggestions"
@@ -14,7 +17,7 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-history-substring-search"
 
 # Alias Pacman
-alias update="sudo pacman -Syu && paru -Syu"
+alias update="sudo pacman -Syu"
 alias pac="sudo pacman -S"
 alias yeet="sudo pacman -Rns"
 alias pacls="pacman -Q"
