@@ -2,4 +2,4 @@
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "gnome-keyring-daemon"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "swaybg -i '/home/wan/Imágenes/WP/eyesgirl.png' -m fil"

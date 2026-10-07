@@ -1,6 +1,7 @@
 layout {
-    gaps 6
+    gaps 12
     center-focused-column "on-overflow"
+    background-color "transparent"
     // always-center-single-column
 
     preset-column-widths {
@@ -13,7 +14,7 @@ layout {
     }
 
     focus-ring {
-        on
+        off
         width 0.5
         // active-color "#A083F6"
         // inactive-color "#505050"
@@ -37,4 +38,9 @@ layout {
         // top 64
         // bottom 64
     }
+}
+
+overview {
+    zoom 0.40
+    backdrop-color "#1e1e2e"
 }

@@ -1,0 +1,101 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "width": "auto",
+    "spacing": 8,
+    "margin-top": 8,
+    "margin-left": 12,
+    "margin-right": 12,
+
+    "modules-left": ["custom/launcher", "custom/niri-workspaces", "custom/media"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "cpu", "memory", "custom/battery", "custom/kbd", "custom/audio", "custom/rec", "custom/power"],
+
+    "custom/launcher": {
+        "format": " 󰣇 ",
+        "on-click": "fuzzel",
+        "tooltip": false
+    },
+
+    "custom/rec": {
+        "format": "{}",
+        "exec": "/home/jt/.local/bin/record-toggle status",
+        "return-type": "json",
+        "interval": 1,
+        "on-click": "/home/jt/.local/bin/record-toggle",
+        "tooltip": false
+    },
+
+    "custom/power": {
+        "format": " 󰐥 ",
+        "on-click": "sh -c /home/jt/.local/bin/powermenu",
+        "tooltip": false
+    },
+
+    "custom/niri-workspaces": {
+        "format": "{}",
+        "exec": "/home/jt/.config/waybar/scripts/niri-workspaces.sh",
+        "interval": 1,
+        "tooltip": false
+    },
+
+    "custom/media": {
+        "format": " 󰝚 {} ",
+        "max-length": 35,
+        "interval": 2,
+        "exec": "playerctl -a metadata --format '{{title}}' 2>/dev/null || echo 'No Media'",
+        "on-click": "playerctl play-pause"
+    },
+
+    "clock": {
+        "format": " 󱑎 {:%I:%M %p  󰃭 %a, %b %d} ",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 1,
+        "locale": "C.utf8"
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "interval": 2,
+        "tooltip": true,
+        "tooltip-format": "CPU Usage: {usage}%\nLoad: {load}"
+    },
+
+    "memory": {
+        "format": " {used:0.1f}G/{total:0.1f}G ({percentage}%)",
+        "interval": 2,
+        "tooltip": true,
+        "tooltip-format": "RAM: {used:0.1f}GB / {total:0.1f}GB\nSwap: {swapUsed:0.1f}GB / {swapTotal:0.1f}GB"
+    },
+
+    "custom/battery": {
+        "exec": "/home/jt/.config/waybar/scripts/battery-status.sh",
+        "return-type": "json",
+        "interval": 10
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    "custom/kbd": {
+        "exec": "/home/jt/.config/waybar/scripts/keyboard-backlight.sh",
+        "return-type": "json",
+        "interval": 1,
+        "on-click": "/home/jt/.config/waybar/scripts/keyboard-backlight.sh toggle",
+        "on-scroll-up": "/home/jt/.config/waybar/scripts/keyboard-backlight.sh up",
+        "on-scroll-down": "/home/jt/.config/waybar/scripts/keyboard-backlight.sh down"
+    },
+
+    "custom/audio": {
+        "exec": "/home/jt/.config/waybar/scripts/audio-control.sh",
+        "interval": 0.1,
+        "return-type": "json",
+        "on-click": "/home/jt/.config/waybar/scripts/audio-selector.sh menu",
+        "on-click-right": "/home/jt/.config/waybar/scripts/audio-control.sh toggle",
+        "on-scroll-up": "/home/jt/.config/waybar/scripts/audio-control.sh up",
+        "on-scroll-down": "/home/jt/.config/waybar/scripts/audio-control.sh down"
+    }
+}
